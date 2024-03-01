@@ -1,0 +1,62 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(76, 75, 75);
+    height: 97vh;
+    margin: 0;
+    padding: 0;
+}
+
+.green {
+    background-color: green;
+}
+
+* {
+    font-size: 40px;
+}
+
+.btnContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.btn {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+#playButton {
+    padding: 10px;
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 100px;
+}
+
+span {
+    text-align: center;
+    color: white;
+}
+
+#playButton.play:before {
+    content: '▶'; /* Unicode character for play */
+}
+
+#playButton.pause:before {
+    content: '❚❚'; /* Unicode characters for pause */
+}
+
+#topHeader {
+    background-color: lightgray;
+    width: 100%;
+}
+
+#account {
+    padding: 5px;
+    padding-left: 20px;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Changer</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+    <div id="container">
+        <div id="topHeader">
+            <div id="account">&#128100;</div>
+        </div>
+        <div class="btnContainer">
+            <span>Voices:</span>
+            <button id="karinButton" class="btn green">Karin</button>
+            <button id="mariaButton" class="btn">Maria</button>
+        </div>
+        <div class="btnContainer">
+            <span>Intonations:</span>
+            <button id="normalIntonationButton" class="btn green">Normal</button>
+            <button id="modifiedIntonationButton" class="btn">Modified</button>
+        </div>
+        <button id="playButton" class="play"></button>
+    </div>
+
+    <audio id="myAudio">
+        <source id="audioSource" src="./assets/1.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="main.js"></script>
+</body>
+</html>
