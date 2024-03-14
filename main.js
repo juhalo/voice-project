@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var audioSource = document.getElementById('audioSource');
     var rangeInput = document.getElementById("rangeInput");
     const buttons = document.querySelectorAll('.btn');
+    var voiceText = document.getElementById('voiceText');
+    var intonationText = document.getElementById("intonationText");
 
     buttons.forEach(button => {
         button.addEventListener('click', function () {
@@ -32,6 +34,9 @@ document.addEventListener('DOMContentLoaded', function () {
             brianButton.classList.remove('green')
             kuoroButton.classList.remove('green')
             robotButton.classList.remove('green')
+
+            voiceText.textContent = "Voice: " + button.textContent;
+            intonationText.textContent = "Intonation changing: Off";
 
             button.classList.add('green')
 
@@ -56,6 +61,9 @@ document.addEventListener('DOMContentLoaded', function () {
         brianButton.classList.remove('green')
         kuoroButton.classList.remove('green')
         robotButton.classList.remove('green')
+
+        voiceText.textContent = "Voice: Normal";
+        intonationText.textContent = "Intonation changing: " + dict[rangeInput.value];
 
         var isPaused = audio.paused;
 

@@ -83,6 +83,7 @@ span {
 #account {
     padding: 5px;
     padding-left: 20px;
+    background-color: var(--tertiary);
 }
 
 nav {
@@ -114,9 +115,11 @@ nav a:hover {
 }
 
 #playingButtonContainer {
-    align-items: center;
+    /* align-items: center; */
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 30;
     height: 30%;
     width: 100%;
@@ -139,4 +142,16 @@ nav a:hover {
 #rangevalue {
     color: white;
     align-self: center;
+}
+
+#textContainer {
+    align-self: flex-start;
+    justify-self: flex-start;
+    width: 100%;
+}
+
+.text {
+    color: white;
+    font-size: 23px;
+    margin-left: 10px;
 }
