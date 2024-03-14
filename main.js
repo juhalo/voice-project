@@ -1,5 +1,10 @@
 let currentTime = 0;
 
+const dict = {
+    1: "Off",
+    2: "On",
+};
+
 document.addEventListener('DOMContentLoaded', function () {
     var audio = document.getElementById('myAudio');
     var playButton = document.getElementById('playButton');
@@ -7,9 +12,26 @@ document.addEventListener('DOMContentLoaded', function () {
     var rachelButton = document.getElementById('rachelButton');
     var brianButton = document.getElementById('brianButton');
     var kuoroButton = document.getElementById('kuoroButton');
-    var normalIntonationButton = document.getElementById('normalIntonationButton');
-    var modifiedIntonationButton = document.getElementById('modifiedIntonationButton');
     var audioSource = document.getElementById('audioSource');
+    var rangeInput = document.getElementById("rangeInput");
+
+    rangeInput.addEventListener("change", function() {
+        document.getElementById("rangevalue").textContent = dict[rangeInput.value];
+        currentTime = audio.currentTime;
+        normalButton.classList.add('green')
+        rachelButton.classList.remove('green')
+        brianButton.classList.remove('green')
+        kuoroButton.classList.remove('green')
+        robotButton.classList.remove('green')
+
+        var isPaused = audio.paused;
+
+        audioSource.src = './assets/Vaihtelu_kk.mp3';
+        audio.load();
+        if (!isPaused) {
+            audio.play();
+        }
+    }, false);
     
 
     playButton.addEventListener('click', function () {
@@ -31,8 +53,8 @@ document.addEventListener('DOMContentLoaded', function () {
         brianButton.classList.remove('green')
         kuoroButton.classList.remove('green')
         robotButton.classList.remove('green')
-        modifiedIntonationButton.classList.remove('green')
-        normalIntonationButton.classList.add('green')
+        rangeInput.value = 1;
+        document.getElementById("rangevalue").textContent = dict[rangeInput.value];
 
         var isPaused = audio.paused;
 
@@ -50,8 +72,8 @@ document.addEventListener('DOMContentLoaded', function () {
         kuoroButton.classList.remove('green')
         robotButton.classList.remove('green')
         rachelButton.classList.add('green')
-        modifiedIntonationButton.classList.remove('green')
-        normalIntonationButton.classList.add('green')
+        rangeInput.value = 1;
+        document.getElementById("rangevalue").textContent = dict[rangeInput.value];
 
         var isPaused = audio.paused;
 
@@ -69,8 +91,8 @@ document.addEventListener('DOMContentLoaded', function () {
         kuoroButton.classList.remove('green')
         robotButton.classList.remove('green')
         brianButton.classList.add('green')
-        modifiedIntonationButton.classList.remove('green')
-        normalIntonationButton.classList.add('green')
+        rangeInput.value = 1;
+        document.getElementById("rangevalue").textContent = dict[rangeInput.value];
 
         var isPaused = audio.paused;
 
@@ -88,8 +110,8 @@ document.addEventListener('DOMContentLoaded', function () {
         brianButton.classList.remove('green')
         robotButton.classList.remove('green')
         kuoroButton.classList.add('green')
-        modifiedIntonationButton.classList.remove('green')
-        normalIntonationButton.classList.add('green')
+        rangeInput.value = 1;
+        document.getElementById("rangevalue").textContent = dict[rangeInput.value];
 
         var isPaused = audio.paused;
 
@@ -107,54 +129,12 @@ document.addEventListener('DOMContentLoaded', function () {
         brianButton.classList.remove('green')
         kuoroButton.classList.remove('green')
         robotButton.classList.add('green')
-        modifiedIntonationButton.classList.remove('green')
-        normalIntonationButton.classList.add('green')
+        rangeInput.value = 1;
+        document.getElementById("rangevalue").textContent = dict[rangeInput.value];
 
         var isPaused = audio.paused;
 
         audioSource.src = './assets/Robo_k.mp3'
-        audio.load();
-        if (!isPaused) {
-            audio.play();
-        }
-    });
-
-    normalIntonationButton.addEventListener('click', function () {
-        currentTime = audio.currentTime;
-        normalIntonationButton.classList.add('green')
-        modifiedIntonationButton.classList.remove('green')
-        normalButton.classList.add('green')
-        rachelButton.classList.remove('green')
-        brianButton.classList.remove('green')
-        kuoroButton.classList.remove('green')
-        robotButton.classList.remove('green')
-
-        var isPaused = audio.paused;
-
-        audioSource.src = './assets/audio.mp3';
-        audio.load();
-        if (!isPaused) {
-            audio.play();
-        }
-        audio.load();
-        if (!isPaused) {
-            audio.play();
-        }
-    });
-
-    modifiedIntonationButton.addEventListener('click', function () {
-        currentTime = audio.currentTime;
-        normalIntonationButton.classList.remove('green')
-        modifiedIntonationButton.classList.add('green')
-        normalButton.classList.add('green')
-        rachelButton.classList.remove('green')
-        brianButton.classList.remove('green')
-        kuoroButton.classList.remove('green')
-        robotButton.classList.remove('green')
-
-        var isPaused = audio.paused;
-
-        audioSource.src = './assets/Vaihtelu_kk.mp3';
         audio.load();
         if (!isPaused) {
             audio.play();

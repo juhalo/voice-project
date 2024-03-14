@@ -26,9 +26,11 @@
         </div>
         
         <div id="about" class="page btnContainer">
-                <span>Intonations:</span>
-                <button id="normalIntonationButton" class="btn green">Normal</button>
-                <button id="modifiedIntonationButton" class="btn">Modified</button>
+                <span>Intonation:</span>
+                <input type="range" min="1" max="2" value="1" class="slider" id="rangeInput">
+                <output id="rangevalue">Off</output>
+                <!-- <button id="normalIntonationButton" class="btn green">Normal</button>
+                <button id="modifiedIntonationButton" class="btn">Modified</button> -->
         </div>
         <button id="playButton" class="play"></button>
     </div>
