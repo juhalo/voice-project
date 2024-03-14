@@ -85,6 +85,20 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function showPage(pageId) {
+    var homeBtn = document.getElementById('homeBtn');
+    var aboutBtn = document.getElementById('aboutBtn');
+    var container = document.getElementById('container');
+    if (pageId === "home") {
+        aboutBtn.classList.remove("currentPage");
+        homeBtn.classList.add("currentPage");
+        container.classList.remove("intonation")
+        container.classList.add("voice")
+    } else {
+        aboutBtn.classList.add("currentPage");
+        homeBtn.classList.remove("currentPage");
+        container.classList.add("intonation")
+        container.classList.remove("voice")
+    }
     var pages = document.querySelectorAll('.page');
     pages.forEach(function(page) {
         page.classList.remove('active-page');

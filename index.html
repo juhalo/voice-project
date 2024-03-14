@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-    <div id="container">
+    <div id="container" class="voice">
         <div id="topHeader">
             <div id="account">&#128100;</div>
+            <nav>
+                <a href="#" id="homeBtn" class="currentPage" onclick="showPage('home')">Voice</a>
+                <a href="#" id="aboutBtn"  onclick="showPage('about')">Intonation</a>
+            </nav>
         </div>
-        <nav>
-            <a href="#" onclick="showPage('home')">Voice</a>
-            <a href="#" onclick="showPage('about')">Intonation</a>
-        </nav>
         
         <div id="home" class="page  active-page btnContainer">
                 <span>Voices:</span>
@@ -30,7 +30,9 @@
                 <input type="range" min="1" max="2" value="1" class="slider" id="rangeInput">
                 <output id="rangevalue">Off</output>
         </div>
-        <button id="playButton" class="play"></button>
+        <div id="playingButtonContainer">
+            <button id="playButton" class="play"></button>
+        </div>
     </div>
  
     <audio id="myAudio">

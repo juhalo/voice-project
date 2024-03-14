@@ -1,13 +1,29 @@
 
+:root {
+    --primary: #55505C;
+    --primary-alt: #323232;
+    --secondary: #C6C1C0;
+    --tertiary: #D9D9D9;
+    --playButton: #585858;
+  }
+
 #container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(76, 75, 75);
-    /* height: 97vh; */
+    height: 97vh;
+    flex: 1;
     margin: 0;
     padding: 0;
+}
+
+.intonation {
+    background-color: var(--primary-alt);
+}
+
+.voice {
+    background-color: var(--primary);
 }
 
 .green {
@@ -22,11 +38,15 @@
     display: flex;
     flex-direction: column;
     padding: 10px;
+    width: 99%;
+    align-items: center;
 }
 
 .btn {
     padding: 5px;
     margin: 5px;
+    /* padding-left: 20px; */
+    width: min(90%, 500px);
     border-radius: 10px;
     font-size: 23px;
 }
@@ -38,6 +58,8 @@
     cursor: pointer;
     margin: 5px;
     border-radius: 100px;
+    background-color: var(--playButton);
+    color: var(--secondary);
 }
 
 span {
@@ -64,7 +86,7 @@ span {
 }
 
 nav {
-    background-color: #333;
+    background-color: white;
     overflow: hidden;
     width: 100%;
     justify-content: space-evenly;
@@ -74,7 +96,7 @@ nav {
 nav a {
     float: left;
     display: block;
-    color: white;
+    color: black;
     text-align: center;
     padding: 14px 20px;
     text-decoration: none;
@@ -89,4 +111,32 @@ nav a:hover {
 }
 .active-page {
     display: flex;
+}
+
+#playingButtonContainer {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 30;
+    height: 30%;
+    width: 100%;
+    /* height: 500px; */
+    background-color: var(--secondary);
+}
+
+/* #container > div {
+    flex: 1,
+} */
+
+.currentPage#homeBtn {
+    background-color: var(--primary);
+}
+
+.currentPage#aboutBtn {
+    background-color: var(--primary-alt); 
+}
+
+#rangevalue {
+    color: white;
+    align-self: center;
 }
