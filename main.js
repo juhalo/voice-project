@@ -1,11 +1,12 @@
-var personIsKarin = true;
-var normalIntonation = true;
+let currentTime = 0;
 
 document.addEventListener('DOMContentLoaded', function () {
     var audio = document.getElementById('myAudio');
     var playButton = document.getElementById('playButton');
-    var karinButton = document.getElementById('karinButton');
-    var mariaButton = document.getElementById('mariaButton');
+    var normalButton = document.getElementById('normalButton');
+    var rachelButton = document.getElementById('rachelButton');
+    var brianButton = document.getElementById('brianButton');
+    var kuoroButton = document.getElementById('kuoroButton');
     var normalIntonationButton = document.getElementById('normalIntonationButton');
     var modifiedIntonationButton = document.getElementById('modifiedIntonationButton');
     var audioSource = document.getElementById('audioSource');
@@ -23,55 +24,145 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    karinButton.addEventListener('click', function () {
-        karinButton.classList.add('green')
-        mariaButton.classList.remove('green')
+    normalButton.addEventListener('click', function () {
+        currentTime = audio.currentTime;
+        normalButton.classList.add('green')
+        rachelButton.classList.remove('green')
+        brianButton.classList.remove('green')
+        kuoroButton.classList.remove('green')
+        robotButton.classList.remove('green')
+        modifiedIntonationButton.classList.remove('green')
+        normalIntonationButton.classList.add('green')
 
-        personIsKarin = true;
-        if (normalIntonation === true) {
-            audioSource.src = './assets/1.mp3';
-        } else {
-            audioSource.src = './assets/2.mp3';
-        }
+        var isPaused = audio.paused;
+
+        audioSource.src = './assets/audio.mp3';
         audio.load();
+        if (!isPaused) {
+            audio.play();
+        }
     });
 
-    mariaButton.addEventListener('click', function () {
-        karinButton.classList.remove('green')
-        mariaButton.classList.add('green')
+    rachelButton.addEventListener('click', function () {
+        currentTime = audio.currentTime;
+        normalButton.classList.remove('green')
+        brianButton.classList.remove('green')
+        kuoroButton.classList.remove('green')
+        robotButton.classList.remove('green')
+        rachelButton.classList.add('green')
+        modifiedIntonationButton.classList.remove('green')
+        normalIntonationButton.classList.add('green')
 
-        personIsKarin = false;
-        if (normalIntonation === true) {
-            audioSource.src = './assets/3.mp3';
-        } else {
-            audioSource.src = './assets/4.mp3';
-        }
+        var isPaused = audio.paused;
+
+        audioSource.src = './assets/Rachel.mp3'
         audio.load();
+        if (!isPaused) {
+            audio.play();
+        }
+    });
+
+    brianButton.addEventListener('click', function () {
+        currentTime = audio.currentTime;
+        normalButton.classList.remove('green')
+        rachelButton.classList.remove('green')
+        kuoroButton.classList.remove('green')
+        robotButton.classList.remove('green')
+        brianButton.classList.add('green')
+        modifiedIntonationButton.classList.remove('green')
+        normalIntonationButton.classList.add('green')
+
+        var isPaused = audio.paused;
+
+        audioSource.src = './assets/Brian.mp3'
+        audio.load();
+        if (!isPaused) {
+            audio.play();
+        }
+    });
+
+    kuoroButton.addEventListener('click', function () {
+        currentTime = audio.currentTime;
+        normalButton.classList.remove('green')
+        rachelButton.classList.remove('green')
+        brianButton.classList.remove('green')
+        robotButton.classList.remove('green')
+        kuoroButton.classList.add('green')
+        modifiedIntonationButton.classList.remove('green')
+        normalIntonationButton.classList.add('green')
+
+        var isPaused = audio.paused;
+
+        audioSource.src = './assets/Kuoro_k.mp3'
+        audio.load();
+        if (!isPaused) {
+            audio.play();
+        }
+    });
+
+    robotButton.addEventListener('click', function () {
+        currentTime = audio.currentTime;
+        normalButton.classList.remove('green')
+        rachelButton.classList.remove('green')
+        brianButton.classList.remove('green')
+        kuoroButton.classList.remove('green')
+        robotButton.classList.add('green')
+        modifiedIntonationButton.classList.remove('green')
+        normalIntonationButton.classList.add('green')
+
+        var isPaused = audio.paused;
+
+        audioSource.src = './assets/Robo_k.mp3'
+        audio.load();
+        if (!isPaused) {
+            audio.play();
+        }
     });
 
     normalIntonationButton.addEventListener('click', function () {
+        currentTime = audio.currentTime;
         normalIntonationButton.classList.add('green')
         modifiedIntonationButton.classList.remove('green')
+        normalButton.classList.add('green')
+        rachelButton.classList.remove('green')
+        brianButton.classList.remove('green')
+        kuoroButton.classList.remove('green')
+        robotButton.classList.remove('green')
 
-        normalIntonation = true;
-        if (personIsKarin === true) {
-            audioSource.src = './assets/1.mp3';
-        } else {
-            audioSource.src = './assets/3.mp3';
+        var isPaused = audio.paused;
+
+        audioSource.src = './assets/audio.mp3';
+        audio.load();
+        if (!isPaused) {
+            audio.play();
         }
         audio.load();
+        if (!isPaused) {
+            audio.play();
+        }
     });
 
     modifiedIntonationButton.addEventListener('click', function () {
+        currentTime = audio.currentTime;
         normalIntonationButton.classList.remove('green')
         modifiedIntonationButton.classList.add('green')
+        normalButton.classList.add('green')
+        rachelButton.classList.remove('green')
+        brianButton.classList.remove('green')
+        kuoroButton.classList.remove('green')
+        robotButton.classList.remove('green')
 
-        normalIntonation = false;
-        if (personIsKarin === true) {
-            audioSource.src = './assets/2.mp3';
-        } else {
-            audioSource.src = './assets/4.mp3';
-        }
+        var isPaused = audio.paused;
+
+        audioSource.src = './assets/Vaihtelu_kk.mp3';
         audio.load();
+        if (!isPaused) {
+            audio.play();
+        }
+    });
+
+    audio.addEventListener('loadedmetadata', function() {
+        // Set current time to the saved time
+        audio.currentTime = currentTime;
     });
 });
