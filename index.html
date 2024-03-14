@@ -11,22 +11,28 @@
         <div id="topHeader">
             <div id="account">&#128100;</div>
         </div>
-        <div class="btnContainer">
-            <span>Voices:</span>
-            <button id="normalButton" class="btn green">Normal</button>
-            <button id="rachelButton" class="btn">Rachel</button>
-            <button id="brianButton" class="btn">Brian</button>
-            <button id="kuoroButton" class="btn">Choir</button>
-            <button id="robotButton" class="btn">Robot</button>
+        <nav>
+            <a href="#" onclick="showPage('home')">Voice</a>
+            <a href="#" onclick="showPage('about')">Intonation</a>
+        </nav>
+        
+        <div id="home" class="page  active-page btnContainer">
+                <span>Voices:</span>
+                <button id="normalButton" class="btn green">Normal</button>
+                <button id="rachelButton" class="btn">Rachel</button>
+                <button id="brianButton" class="btn">Brian</button>
+                <button id="kuoroButton" class="btn">Choir</button>
+                <button id="robotButton" class="btn">Robot</button>
         </div>
-        <div class="btnContainer">
-            <span>Intonations:</span>
-            <button id="normalIntonationButton" class="btn green">Normal</button>
-            <button id="modifiedIntonationButton" class="btn">Modified</button>
+        
+        <div id="about" class="page btnContainer">
+                <span>Intonations:</span>
+                <button id="normalIntonationButton" class="btn green">Normal</button>
+                <button id="modifiedIntonationButton" class="btn">Modified</button>
         </div>
         <button id="playButton" class="play"></button>
     </div>
-
+ 
     <audio id="myAudio">
         <source id="audioSource" src="./assets/audio.mp3" type="audio/mp3">
         Your browser does not support the audio element.

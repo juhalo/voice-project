@@ -166,3 +166,15 @@ document.addEventListener('DOMContentLoaded', function () {
         audio.currentTime = currentTime;
     });
 });
+
+function showPage(pageId) {
+    // Hide all pages
+    var pages = document.querySelectorAll('.page');
+    pages.forEach(function(page) {
+        page.classList.remove('active-page');
+    });
+
+    // Show the selected page
+    var selectedPage = document.getElementById(pageId);
+    selectedPage.classList.add('active-page');
+}
